@@ -1,0 +1,9 @@
+{
+    "apps": [{
+        "name": "Github-Python",
+        "cwd": "./",
+        "script": "launcher.py",
+        "args": "",
+        "interpreter": "py"
+    }]
+}
