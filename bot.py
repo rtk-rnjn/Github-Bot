@@ -20,6 +20,7 @@ class GithubPython(commands.Bot):
     async def setup_hook(self):
         await self.load_extension('jishaku')
         self.session = aiohttp.ClientSession(headers={'User-Agent' : 'GithubPythonBot'})
+        self.github_client = await github.GHClient(username='GithubPythonBot',token=self._config.GITHUB_TOKEN)
         os.environ["JISHAKU_NO_UNDERSCORE"] = "True"
         os.environ["JISHAKU_NO_DM_TRACEBACK"] = "True" 
         os.environ["JISHAKU_HIDE"] = "True"
