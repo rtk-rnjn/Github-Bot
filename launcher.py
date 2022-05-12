@@ -1,8 +1,6 @@
 import asyncio
 from asyncio.log import logger
-from logging import Logger
 import logging
-import re
 
 import discord
 
@@ -15,7 +13,12 @@ handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(me
 logger.addHandler(handler)
 
 async def launch():
-    bot = GithubPython(command_prefix='?', description='GithubPythonBot',intents=discord.Intents.all())
+    bot = GithubPython(
+        command_prefix='?',
+        description='GithubPythonBot',
+        intents=discord.Intents.all()
+    )
     await bot.start()
 
-asyncio.run(launch())
+if __name__ == "__main__":
+    asyncio.run(launch())
