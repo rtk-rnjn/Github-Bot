@@ -257,7 +257,7 @@ class GitLink(commands.Cog):
 
         message_to_send = await self._parse_snippets(message.content)
 
-        if 0 < len(message_to_send) <= 2000 and (self._check_gitlink_req(message)):
+        if 0 < len(message_to_send) <= 2000:
             await message.channel.send(message_to_send, view=Delete(message.author))
             try:
                 await message.edit(suppress=True)
